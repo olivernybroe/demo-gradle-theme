@@ -25,10 +25,12 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-
-    </extensions>
-
-    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.example.demogradletheme.DummyStartup"/>
         <themeProvider id="demo-theme" path="/theme/demotheme.theme.json"/>
     </extensions>
+
+    <applicationListeners>
+        <listener class="com.example.demogradletheme.DummyStartup" topic="com.intellij.ide.AppLifecycleListener"/>
+    </applicationListeners>
+
 </idea-plugin>
